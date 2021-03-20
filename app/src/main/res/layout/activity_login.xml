@@ -99,7 +99,7 @@
         android:hint="Войти"
         android:textSize="18sp"
         android:padding="18dp"
-        android:backgroundTint="#86ABADAE"
+        android:backgroundTint="#861E86BA"
         android:ems="17"
         android:textStyle="normal|bold"
         android:textColorHint="@color/black"
