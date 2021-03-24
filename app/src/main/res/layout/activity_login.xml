@@ -101,6 +101,7 @@
         android:padding="18dp"
         android:backgroundTint="#861E86BA"
         android:ems="17"
+        android:enabled="true"
         android:textStyle="normal|bold"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.graphics.Color.*;
@@ -18,7 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText textEmail;
     EditText textPassword;
     Button btn;
-    //public int counter = 3;
 
 
     @Override
@@ -29,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
         textEmail = findViewById(R.id.textEmail);
         textPassword = findViewById(R.id.textPassword);
         btn = findViewById(R.id.button);
-        textEmail.setBackgroundColor(WHITE);
 
 
         String inputName = textEmail.getText().toString();
@@ -49,14 +47,13 @@ public class LoginActivity extends AppCompatActivity {
 
     public void validate1(String userName, String userPassword) {
 
-        btn.setBackgroundColor(Color.GREEN);
-
         if ((userName.equals("")) && (userPassword.equals(""))) {
-            Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
+            Intent intent = new Intent(LoginActivity.this, CalculatorActivity.class);
             startActivity(intent);
-            Toast toast = Toast.makeText(this, "Добро пожаловать!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Вам разрешен доступ к калькулятору!", Toast.LENGTH_LONG);
             toast.show();
         }
+        btn.setBackgroundColor(GREEN);
     }
 
     public Boolean validate2() {
@@ -66,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
         String name = textEmail.getText().toString();
         String pasw = textPassword.getText().toString();
 
-        if ((name.isEmpty()) && (pasw.isEmpty())) {
+        if ((name.isEmpty()) || (pasw.isEmpty())) {
             Toast toast = Toast.makeText(this, "Заполните все поля!!!", Toast.LENGTH_SHORT);
             toast.show();
         } else {
